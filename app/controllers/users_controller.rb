@@ -11,7 +11,16 @@ class UsersController < ApplicationController
   end
 
   def search
-    @users = User.search(params[:q]).records
+    # @users = User.search(params[:q]).records
+    @users = User.search(
+      query: {
+        multi_match: {
+          query: params[:q].to_s,
+          fields: ['name', 'intro']
+        }
+      }
+    ).records
+
     render action: 'index'
   end
 
