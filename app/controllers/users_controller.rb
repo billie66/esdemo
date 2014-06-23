@@ -10,6 +10,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def search
+    @users = User.search(params[:q]).records
+    render action: 'index'
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show

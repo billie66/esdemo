@@ -1,5 +1,15 @@
 <h1>Listing users</h1>
 
+<hr>
+
+ <%= form_tag search_users_path, method: 'get' do %>
+   <%= label_tag :query %>
+   <%= text_field_tag :q, params[:q] %>
+   <%= submit_tag :search %>
+ <% end %>
+
+ <hr>
+
 <table>
   <tr>
     <th>Name</th>
