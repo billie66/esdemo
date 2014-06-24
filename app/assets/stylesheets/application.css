@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+.highlight {
+  color: #000;
+  background-color: #ff0;
+}

@@ -3,7 +3,6 @@
 <hr>
 
  <%= form_tag search_users_path, method: 'get' do %>
-   <%= label_tag :query %>
    <%= text_field_tag :q, params[:q] %>
    <%= submit_tag :search %>
  <% end %>
@@ -33,3 +32,11 @@
 <br />
 
 <%= link_to 'New User', new_user_path %>
+
+<script>
+  $("body").highlightSearchTerms({
+    referrerPatterns: [
+      "^\\?utf8*.+[&?]q=([^&]+).*$"
+    ]
+  });
+</script>
