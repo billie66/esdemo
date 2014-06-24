@@ -13,15 +13,12 @@
   // Private: Extract terms from referrer
   function extractSearchTerms(ref, o) {
     var terms = "";
-
     $.each(o.referrerPatterns, function () {
       var pattern = new RegExp(this, "i"),
         unsafe;
-
       if (pattern.exec(ref)) {
         unsafe = new RegExp(o.unsafeChars, "g");
         terms = decodeURIComponent(RegExp.$1).replace(unsafe, "+").replace(/^\+*(.*?)\+*$/, "$1").replace(/\++/g, "|");
-
         return false; // break $.each
       }
     });

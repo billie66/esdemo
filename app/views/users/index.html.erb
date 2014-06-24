@@ -19,7 +19,7 @@
   </tr>
 
 <% @users.each do |user| %>
-  <tr>
+  <tr class="list">
     <td><%= user.name %></td>
     <td><%= user.intro %></td>
     <td><%= link_to 'Show', user %></td>
@@ -34,9 +34,9 @@
 <%= link_to 'New User', new_user_path %>
 
 <script>
-  $("body").highlightSearchTerms({
+  $(".list").highlightSearchTerms({
     referrerPatterns: [
-      "^\\?utf8*.+[&?]q=([^&]+).*$"
+      "[&?]q=([^&]+).*$"
     ]
   });
 </script>
