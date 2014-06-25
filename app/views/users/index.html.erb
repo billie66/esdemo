@@ -1,13 +1,12 @@
 <h1>Listing users</h1>
-
-<hr>
-
- <%= form_tag search_users_path, method: 'get' do %>
-   <%= text_field_tag :q, params[:q] %>
-   <%= submit_tag :search %>
- <% end %>
-
- <hr>
+<div class="nav-search">
+  <%= form_tag search_users_path, method: 'get' do %>
+  <span class="input-icon">
+    <%= text_field_tag :q, params[:q], placeholder: "Search ...", autocomplete: "off", class: "nav-search-input" %>
+    <i class="ace-icon fa fa-search nav-search-icon"></i>
+  </span>
+  <% end %>
+</div>
 
 <table>
   <tr>
