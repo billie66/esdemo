@@ -1,4 +1,3 @@
-<h1>Listing users</h1>
 <div class="nav-search">
   <%= form_tag search_users_path, method: 'get' do %>
   <span class="input-icon">
@@ -10,27 +9,30 @@
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Intro</th>
-    <th></th>
-    <th></th>
+    <th class="name">Name</th>
+    <th class="intro">Intro</th>
     <th></th>
   </tr>
 
 <% @users.each do |user| %>
   <tr class="list">
-    <td><%= user.name %></td>
-    <td><%= user.intro %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td class="name"><%= user.name %></td>
+    <td class="intro"><%= user.intro %></td>
+    <td class="action">
+      <%= link_to user, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="fa fa-trash-o delete-user"></i>
+      <% end %>
+    </td>
   </tr>
 <% end %>
 </table>
 
-<br />
 
-<%= link_to 'New User', new_user_path %>
+<div class="new-user">
+  <%= link_to new_user_path do %>
+    <i class="fa fa-user"> New User</i>
+  <% end %>
+</div>
 
 <script>
   $(".list").highlightSearchTerms({

@@ -22,7 +22,7 @@
 .container {
   width: 960px;
   margin: 0 auto;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .highlight {
@@ -31,17 +31,18 @@
 }
 
 .nav-search {
+  margin-top: 50px;
   line-height: 24px;
 }
 
 .nav-search .nav-search-input {
   border: 1px solid #6FB3E0;
-  width: 152px;
-  height: 24px !important;
+  width: 189px;
+  height: 28px !important;
   padding-top: 2px;
   padding-bottom: 2px;
   border-radius: 4px !important;
-  font-size: 11px;
+  font-size: 13px;
   color: #666 !important;
   z-index: 11;
   -webkit-transition: width ease .15s;
@@ -52,9 +53,12 @@
   border-color: #6FB3E0;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus, textarea:focus, input[type="submit"]:focus {
   background-color: #fff;
   outline: none;
+}
+input[type="submit"]:hover {
+  cursor: pointer;
 }
 
 span.input-icon {
@@ -90,4 +94,48 @@ span.input-icon {
   border: none;
   border-radius: 0;
   padding: 0 3px !important;
+}
+
+table {
+  margin-top: 50px;
+  width: 900px;
+  border-collapse: collapse;
+}
+th.name {
+  width: 100px;
+  text-align: center;
+}
+th.intro {
+  width: 700px;
+}
+tr th{
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+tr td {
+  padding: 10px 20px;
+  line-height: 30px;
+  border-bottom: 1px solid #ddd;
+}
+td.action {
+  padding: 10px 10px;
+}
+td.action {
+  width: 50px;
+}
+
+.list .name {
+  text-align: center;
+}
+
+a {
+  color: #1d9d74;
+}
+
+.delete-user {
+  color: red;
+}
+
+.new-user {
+  margin-top: 50px;
 }
