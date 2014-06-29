@@ -25,11 +25,6 @@
   font-size: 18px;
 }
 
-.highlight {
-  color: #000;
-  background-color: #ff0;
-}
-
 .nav-search {
   margin-top: 50px;
   line-height: 24px;
@@ -105,8 +100,11 @@ th.name {
   width: 100px;
   text-align: center;
 }
+th.index {
+  width: 200px;
+}
 th.intro {
-  width: 700px;
+  width: 600px;
 }
 tr th{
   padding: 10px 0;

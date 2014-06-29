@@ -9,20 +9,14 @@
 
 <table>
   <tr>
-    <th class="name">Name</th>
+    <th class="index name">Name</th>
     <th class="intro">Intro</th>
-    <th></th>
   </tr>
 
 <% @users.each do |user| %>
   <tr class="list">
     <td class="name"><%= user.name %></td>
     <td class="intro"><%= user.intro %></td>
-    <td class="action">
-      <%= link_to user, method: :delete, data: { confirm: 'Are you sure?' } do %>
-        <i class="fa fa-trash-o delete-user"></i>
-      <% end %>
-    </td>
   </tr>
 <% end %>
 </table>
@@ -32,11 +26,3 @@
     <i class="fa fa-user"> New User</i>
   <% end %>
 </div>
-
-<script>
-  $(".list").highlightSearchTerms({
-    referrerPatterns: [
-      "[&?]q=([^&]+).*$"
-    ]
-  });
-</script>

@@ -10,10 +10,14 @@ class UsersController < ApplicationController
           query: params[:q].to_s,
           fields: ['name', 'intro']
         }
+      },
+      highlight: {
+        fields: {
+          name: {},
+          intro: {}
+        }
       }
     ).records
-
-    render action: 'index'
   end
 
   def new

@@ -1,0 +1,27 @@
+<div class="search-result-page">
+  <table>
+    <tr>
+      <th class="name">Name</th>
+      <th class="intro">Intro</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @users.each_with_hit do |record, hit| %>
+      <tr class="list">
+        <td class="name"><%= hit.highlight.name ? (raw hit.highlight.name[0]) : record.name %></td>
+        <td class="intro"><%= hit.highlight.intro ? (raw hit.highlight.intro[0]) : record.intro %></td>
+        <td><%=  %></td>
+        <td class="action">
+          <%= link_to record, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fa fa-trash-o delete-user"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= link_to root_path, class: "back" do %>
+    <i class="fa fa-arrow-left"> Back</i>
+  <% end %>
+</div>
