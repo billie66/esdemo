@@ -18,6 +18,8 @@ class UsersController < ApplicationController
         }
       }
     ).records
+
+    session[:redirect_url] = request.url
   end
 
   def new
@@ -38,6 +40,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
 
-    redirect_to root_path
+    redirect_to session[:redirect_url]
   end
 end
