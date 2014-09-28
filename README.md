@@ -1,4 +1,0 @@
-esdemo
-======
-
-elasticsearch

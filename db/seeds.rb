@@ -1,15 +1,7 @@
-
-contents = [
-'Lorem ipsum dolor sit amet.',
-'Consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
-'Labore et dolore magna aliqua.',
-'Ut enim ad minim veniam, sed quis nostrud exercitation ullamco laboris.',
-'Excepteur sint occaecat cupidatat non proident sit amet.'
-]
-
-puts "Deleting all users..."
-User.delete_all
-
-%w[ Tom Jack Kate Pete dou].each_with_index do |name, i|
-  User.create name: name, intro: contents[i]
-end
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', city: cities.first)
