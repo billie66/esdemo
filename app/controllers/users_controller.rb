@@ -43,8 +43,8 @@ class UsersController < ApplicationController
     redirect_to session[:redirect_url]
   end
 
-def user_params
+  def user_params
     params.require(:user).permit(:intro, :name)
-end
+  end
 
 end
